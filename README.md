@@ -1,4 +1,4 @@
-# Empeek company test task v0.02
+# Empeek company test task
 
 This project provides demonstration of possible solution of task above.
 
