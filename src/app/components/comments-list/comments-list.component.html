@@ -1,0 +1,30 @@
+<div class="comments-container">
+    <div class="display-4"> {{ getSelectedItemCommentsTitle() }} </div>
+    <div class="comments-list mh-70">
+        <!-- Currentely selected item comments list -->
+        <div class="row pt-4" *ngFor="let comment of getSelectedItems(); let i = index">
+            <div class="col-2">
+                <div [class.even-box]="i % 2 == 0"
+                     [class.odd-box]="i % 2 != 0"
+                     class="odd-box mw-100 mh-100"></div>
+            </div>
+            <div class="col-10 mv-90 pt-0 comment-text">
+                <div>{{ comment.text }}</div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- FormGroup for adding new comments -->
+        <div class="row pt-3">
+            <div class="col-2 pr-0">
+                <span class="input-box mw-100 mh-100"></span>
+            </div>
+            <div class="col-10 pl-0">
+                <div class="input-group">
+                  <textarea rows="4" class="form-control"
+                  [(ngModel)]="newInputItemComment"
+                  (keydown.control.enter)="add()"></textarea>
+                </div>
+            </div>
+          </div>
+</div>

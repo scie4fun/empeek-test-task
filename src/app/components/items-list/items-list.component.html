@@ -1,0 +1,31 @@
+<div class="items-container">
+    <!-- FormGroup for new items adding -->
+    <div class="form-group">
+            <div class="display-4 pb-4">Items</div>
+            <div class="row">
+                <div class="col-9 pr-0">
+                    <input type="text" class="form-control" 
+                           placeholder="Type name here..."
+                           [(ngModel)]="newInputItemTitle"
+                           (keydown.control.enter)="add()">
+                </div>
+                <div class="col-3 mw-100 pl-2">
+                    <button type="button" class="btn btn-info add" (click)="add()">Add new</button>
+                </div>
+            </div>
+        </div>
+
+    <!-- List of items currentely existing in local storage -->
+    <div [class.item-default]="!item.isSelected"
+            [class.item-selected]="item.isSelected"
+            *ngFor="let item of items; let i = index" class="row" 
+            (click)="setSelected(i)">
+           <div class="col-10 item-default">
+               <span class="h5">{{ item.title }}</span> 
+               <span class="badge badge-pill badge-info">{{ item.comments.length }}</span></div>
+           <div class="col-2 mw-100 delete ml-4">
+               <button type="button" class="btn btn-outline-danger" (click)="delete(i)">DELETE</button>
+           </div>
+       </div>
+    
+</div>

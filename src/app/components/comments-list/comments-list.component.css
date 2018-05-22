@@ -1,0 +1,34 @@
+/* app-comments-list component general styles */
+.comments-container {
+    padding: 20px;
+    width: 90%;
+    height: 85vh;
+}
+
+.comments-list {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 75%;
+}
+
+.input-box, .odd-box, .even-box {
+    width: 75px;
+    height: 75px;
+    display: block;
+}
+
+.input-box {
+    background-color: rgb(194, 189, 189);
+}
+
+.even-box {
+    background-color: rgb(226, 130, 5);
+}
+
+.odd-box {
+    background-color: rgb(90, 5, 226);
+}
+
+.comment-text {
+    width: 90%;
+}
